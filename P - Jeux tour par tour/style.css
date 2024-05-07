@@ -1,0 +1,639 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ------------------------------------------------------ECRAN DE DEBUT--------------------------------------------------------------- */
+/* Opacité du fond */
+.opacite::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+
+}
+
+/* Fond */
+#accueil {
+    display: block;
+    background-image: url("./image/fond-accueil.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: auto;
+    height: 100vh;
+}
+
+/* Logo */
+.logo {
+    position: relative;
+    bottom: 1rem;
+    left: 40rem;
+}
+
+.button-debut {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+#jouer {
+    background: linear-gradient(to right, #996B31, #E7D88A);
+    width: 200px;
+    height: 50px;
+    font-size: 24px;
+    border-radius: 10px;
+}
+
+#tutoriel {
+    background: linear-gradient(to right, #996B31, #E7D88A);
+    width: 200px;
+    height: 50px;
+    font-size: 24px;
+    border-radius: 10px;
+}
+
+#ouvertureModal{
+    display: none
+}
+
+#ouvertureModal{
+    position: relative;
+    /* left: 600px; */
+    width: auto;
+    padding: 20px;
+    margin: 30px 100px 10px 100px;
+    background: linear-gradient(to right, #996B31, #E7D88A);
+    color: #300E4C;
+    font-size: 24px;
+    line-height: 50px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+#modalEnd{
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #300E4C;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+    font-size: 16px;
+}
+
+span{
+    font-weight: 600;
+}
+
+#personnage{
+    display: none;
+}
+
+/* ---------------------------------------------------SECTION PERSONNAGES------------------------------------------------------------ */
+.fondPersonnage::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1; 
+}
+
+
+.fondPersonnage{
+    display: block;
+    background-image: url("./image/fond-personnage.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    width: auto;
+    height: 100vh;
+}
+
+h2{
+    position: relative;
+    left: 65px;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+    color: white;
+    font-size: 60px;
+    padding-top: 50px;
+}
+
+.joueur{
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    padding-top: 60px;
+}
+
+.inputlabel1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #E7D88A;
+  position: relative ;
+  right: 270px;
+}
+
+.inputlabel2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: purple;
+  position: relative ;
+  left: 380px;
+}
+
+#pseudo1{
+    height: 30px;
+    width: 200px;
+  }
+
+  #pseudo2{
+    height: 30px;
+    width: 200px;
+  }
+
+.valider1{
+  background-color: #E7D88A;
+  height: 25px;
+  width: 50px;
+  cursor: pointer;
+}
+
+.valider2{
+  background-color: purple;
+  height: 25px;
+  width: 50px;
+  cursor: pointer;
+}
+
+.joueur1{
+    position: relative;
+    z-index: 2;
+    color: #996B31;
+}
+
+.joueur2{
+    position: relative;
+    z-index: 2;
+    color: purple;
+}
+
+.doublvalid{
+  display: flex;
+  justify-content: center;
+  gap: 720px;
+}
+
+#validPerso1{
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  z-index: 2;
+  background-color: #E7D88A;
+  width: 250px;
+  height: 50px;
+  cursor: pointer;
+}
+
+#validPerso2{
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  z-index: 2;
+  left: 130px;
+  background-color: purple;
+  width: 250px;
+  height: 50px;
+  cursor: pointer;
+}
+
+#croco {
+  display: none;
+  position: relative;
+  z-index: 2;
+  bottom: 490px;
+  left: -200px; 
+  height: 150px;
+  animation: crocoArrival 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes crocoArrival {
+  0% {
+    left: -200px; 
+    transform: rotate(-90deg); 
+  }
+  100% {
+    left: 880px; 
+    transform: rotate(0); 
+  }
+}
+
+#shushu {
+  display: none;
+  position: relative;
+  z-index: 2;
+  height: 200px;
+  bottom: 460px;
+  left: -200px; 
+  animation: shushuArrival 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes shushuArrival {
+  0% {
+    right: -200px; 
+    transform: rotate(-90deg); 
+  }
+  100% {
+    left: 740px; 
+    transform: rotate(0); 
+  }
+}
+
+#game {
+  display: none;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  z-index: 2;
+  bottom: 430px;
+  left: 515px;
+  width: 220px;
+  height: 30px;
+  background: linear-gradient(to right, #E7D88A, hwb(300 17% 42%));
+  font-size: 18px;
+  cursor: pointer;
+}
+
+
+/* -----------------------------------------------------------CARROUSEL----------------------------------------------------------- */
+.carouselDeux{
+    display: flex;
+    justify-content: center;
+}
+
+
+.carousel {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .carousel-container {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .slide {
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    right: 0px;
+  }
+  
+  .flech{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .prev {
+    position: relative;
+    left: 170px;
+    width: 20px;
+    height: 30px;
+    cursor: pointer;
+  }
+  
+  .next {
+    position: relative;
+    left: 690px;
+    width: 20px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+  /* ----------------------------------------------------------------Carrousel 2-------------------------------------------------  */
+
+  .carousel2 {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .carousel-container2 {
+    display: flex;
+    transition: transform 0.5s ease;
+
+    
+  }
+  
+  .slide2 {
+    flex: 0 0 100%;   
+     display: flex;
+    justify-content: center;
+    position: relative;
+    left: 120px;
+  }
+  
+  .flech2 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .prev2 {
+    position: relative;
+    left: 300px;
+    width: 20px;
+    height: 30px;
+    cursor: pointer;
+  }
+  
+  .next2 {
+    position: relative;
+    left: 790px;
+    width: 20px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+/* -----------------------------------------------------------SECTION COMBAT ----------------------------------------------------- */
+#combat::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1; 
+}
+
+#combat{
+  display: none;
+  background-image: url("./image/fond-combat.jpg");
+  background-repeat: no-repeat;
+  width: auto;
+  height: 100vh;
+}
+
+.combatjouer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  gap: 650px;
+}
+
+span{
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.j1pseudo{
+  font-family: "Poppins", sans-serif;
+  color: #E7D88A;
+  font-size: 40px;
+}
+
+.j2pseudo{
+  font-family: "Poppins", sans-serif;
+  color: purple;
+  font-size: 40px;
+}
+
+#barreHp{
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: transparent;
+  height: 30px;
+  margin-top: 10px;
+  border: 1px solid white;
+}
+
+#barreHp2{
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: transparent;
+  height: 30px;
+  margin-top: 10px;
+  border: 1px solid white;
+}
+
+#hptransparent{
+  position: relative;
+  z-index: 1;
+  bottom: 40px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: red;
+  height: 30px;
+  margin-top: 10px;
+}
+
+#hptransparent2{
+  position: relative;
+  z-index: 1;
+  bottom: 40px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: red;
+  height: 30px;
+  margin-top: 10px;
+}
+
+#imgjoueur1{
+  position: relative;
+  z-index: 2;
+  bottom: 30px;
+  background-image: url("./image/iop 1.svg");
+  background-repeat: no-repeat;
+  height: 60vh;
+  width: 450px;
+  margin-top: 10px;
+}
+
+.bouton1{
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  
+}
+
+.bouton2{
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+#btnAtk{
+  position: relative;
+  bottom: 20px;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  background-color: #E7D88A;
+}
+
+#btnSoin{
+  position: relative;
+  bottom: 20px;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  background-color: #E7D88A;
+}
+
+#btnAtk2{
+  position: relative;
+  bottom: 20px;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  background-color: purple;
+}
+
+#btnSoin2{
+  position: relative;
+  bottom: 20px;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  background-color: purple;
+}
+
+
+#imgjoueur2{
+  position: relative;
+  z-index: 2;
+  bottom: 30px;
+  background-image: url("./image/iop 1.svg");
+  background-repeat: no-repeat;
+  height: 60vh;
+  width: 450px;
+  margin-top: 10px;
+}
+/* ------------------------------------------------------MODAL DE FIN -------------------------------------------------------------- */
+#ouvertureModalFin{
+  display: none;
+}
+
+#ouvertureModalFin{
+  position: relative;
+  z-index: 2;
+  bottom: 900px;
+  width: auto;
+  height: 92vh;
+  padding: 20px;
+  margin: 30px 100px 10px 100px;
+  background: linear-gradient(to right, #996B31, #E7D88A);
+  color: #300E4C;
+  font-size: 24px;
+  line-height: 50px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.titreModalFin{
+  padding-top: 100px;
+  margin-bottom: 100px;
+  font-size: 80px
+}
+
+#pModalFin{
+  font-size: 40px;
+  line-height: 60px;
+}
+
+.boutonModalFin{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#modalFinAccueil{
+  margin-top: 200px;
+  padding: 5px 10px;
+  background-color: #300E4C;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 500px;
+  height: 70px;
+  font-size: 16px;
+
+}
+
+#modalFinPersonnage{
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #300E4C;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 500px;
+  height: 70px;
+  font-size: 16px;
+
+}
+
+#modalFinRecommencer{
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #300E4C;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 500px;
+  height: 70px;
+  font-size: 16px;
+
+}

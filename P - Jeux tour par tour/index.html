@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Julith</title>
+</head>
+
+<body>
+    <main>
+
+        <section id="accueil">
+            <div class="opacite">
+                <img class="logo" src="./image/Logo-removebg-preview.png" alt="Logo">
+            </div>
+            <div class="button-debut">
+                <button id="jouer">Jouer</button>
+                <button id="tutoriel">Tutoriel</button>
+            </div>
+
+            <dialog id="ouvertureModal">
+                <p>Le jeu commence une fois vos personnages et pseudo choisi.<br>
+                    Vous commencez chacun d'un bout à l'autre de la carte.<br>
+                    Votres but est d'utilisé vos points d'attaque et vos points de mouvement pour avancer et attaquer
+                    votre adversaire.<br>
+                    Chaque personne bénéficie de statistique différente, de sort différents et de stratégie d'attaque et
+                    de defense diffrérente.<br>
+                    Prenez le personne qui vous correspond le mieux et jeté vous dans la bataille !<br>
+                    Le premier personne qui descend à 0 points de vie a perdu et le combat s'arrête.<br>
+                    <span>Saurez-vous être à la hauteur de la bataille qui vous attend ?</span><br>
+                </p>
+                <button id="modalEnd">Fermer le tutoriel</button>
+            </dialog>
+
+        </section>
+
+
+        <section id="personnage">
+
+            <div class="fondPersonnage">
+                <h2>Sélectionnez vos personnages</h2>
+
+                <div class="joueur">
+                    <div class="inputlabel1">
+                        <label for="pseudo1">Joueur 1 :</label>
+                        <input type="text" id="pseudo1" placeholder="Entrez votre pseudo">
+                        <button class="valider1">Valider</button>
+                    </div>
+                    <div class="inputlabel2">
+                        <label for="pseudo2">Joueur 2 :</label>
+                        <input type="text" id="pseudo2" placeholder="Entrez votre pseudo">
+                        <button class="valider2">Valider</button>
+                    </div>
+                </div>
+                <div class="carouselDeux">
+                    <div class="carousel">
+                        <div class="carousel-container">
+                            <div class="slide"><img src="./image/iop 1.svg" alt="Slide 1"></div>
+                            <div class="slide"><img src="./image/eni (2).png" alt="Slide 2"></div>
+                            <div class="slide"><img src="./image/huppeer 1.svg" alt="Slide 3"></div>
+                            <div class="slide"><img src="./image/cra 1.svg" alt="Slide 4"></div>
+
+                        </div>
+                        <div class="flech">
+                            <button class="prev" onclick="moveSlide1(-1)">&#10094;</button>
+                            <button class="next" onclick="moveSlide1(1)">&#10095;</button>
+                        </div>
+                    </div>
+
+                    <div class="carousel2">
+                        <div class="carousel-container2">
+                            <div class="slide2"><img src="./image/iop 1.svg" alt="Slide 1"></div>
+                            <div class="slide2"><img src="./image/eni (2).png" alt="Slide 2"></div>
+                            <div class="slide2"><img src="./image/huppeer 1.svg" alt="Slide 3"></div>
+                            <div class="slide2"><img src="./image/cra 1.svg" alt="Slide 4"></div>
+
+                        </div>
+
+                        <div class="flech2">
+                            <button class="prev2" onclick="moveSlide2(-1)">&#10094;</button>
+                            <button class="next2" onclick="moveSlide2(1)">&#10095;</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="doublvalid">
+                    <button id="validPerso1">Selectionner ce personnage</button>
+                    <button id="validPerso2">Selectionner ce personnage</button>
+                </div>
+
+
+
+                <img id="croco" src="./image/croco.png" alt="crocobur">
+                <img id="shushu" src="./image/suko.png" alt="shushu">
+
+                <button id="game">Lancez la partie</button>
+
+            </div>
+
+        </section>
+
+        <section id="combat">
+
+            <h2>Battez-vous pour la gloire de Bonta et de Brakmar !</h2>
+
+            <div class="combatjouer">
+
+                <div id="joueur1">
+                    <span class="j1pseudo">Joueur 1</span>
+                    <div id="barreHp">5000/5000</div>
+                    <div id="hptransparent"></div>
+                    <div id="imgjoueur1"></div>
+                <div class="bouton1">
+                    <button id="btnSoin">Défense</button>
+                    <button id="btnAtk">Attaque</button>
+                </div>
+                </div>
+
+
+                <div id="joueur2">
+                    <span class="j2pseudo">Joueur 2</span>
+                    <div id="barreHp2">5000/5000</div>
+                    <div id="hptransparent2"></div>
+                    <div id="imgjoueur2"></div>
+                    <div class="bouton2">
+                        <button id="btnAtk2">Attaque</button>
+                        <button id="btnSoin2">Défense</button>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <dialog id="ouvertureModalFin">
+                <span class="titreModalFin">Fin de partie !</span><br>
+                <p id="pModalFin">Le joueur X à gagner !<br> Bravo à toi jeune gerrier. Tu fais honneur à ta nation.<br> Remettras-tu ton titre et ton honneur en jeux ? Nation saura te faire plier ! </p>
+                <div id="boutonModalFin">
+                <button id="modalFinAccueil">Revenir à l'accueil</button>
+                <button id="modalFinPersonnage">Revenir à la sélection des personnages</button>
+                <button id="modalFinRecommencer">Recommencez une partie avec les mêmes personnages</button>
+            </div>
+            </dialog>
+
+        </section>
+
+    </main>
+
+    <script src="js.js"></script>
+</body>
+
+</html>
