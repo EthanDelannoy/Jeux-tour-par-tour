@@ -198,7 +198,12 @@ boutonatk.addEventListener('click', () => {
     setTimeout(function() {
     modalFin.style.display ='block'
   }, 300); 
-  pModalFin.innerHTML = 'Le joueur 1 à gagner !<br> Bravo à toi jeune gerrier. Tu fais honneur à Bonta. Remettras-tu ton titre et ton honneur en jeux ? Brakmar saura te faire plier !';
+  const pseudoJoueur1Final = inputPseudo1.value.trim(); 
+  if (pseudoJoueur1Final === '') {
+    pModalFin.innerHTML = 'Joueur 1 à gagné !<br> Bravo à toi jeune guerrier. Tu fais honneur à Bonta. Remettras-tu ton titre et ton honneur en jeux ? Brakmar saura te faire plier !';
+  } else {
+    pModalFin.innerHTML = pseudoJoueur1Final + ' a gagné !<br> Bravo à toi jeune guerrier. Tu fais honneur à Bonta. Remettras-tu ton titre et ton honneur en jeux ? Brakmar saura te faire plier !';
+  }
   }
   tourJoueur1 = false;
   updateDisplay();
@@ -212,7 +217,13 @@ boutonatk2.addEventListener('click', () => {
     setTimeout(function() {
     modalFin.style.display ='block'
   }, 300); 
-    pModalFin.innerHTML = 'Le joueur 2 à gagner !Bravo à toi jeune gerrier. Tu fais honneur à Brakmar. Remettras-tu ton titre et ton honneur en jeux ? Bonta saura te faire plier ! '
+  const pseudoJoueur2Final = inputPseudo2.value.trim(); 
+
+if (pseudoJoueur2Final === '') {
+  pModalFin.innerHTML = 'Joueur 2 a gagné !<br> Bravo à toi jeune guerrier. Tu fais honneur à Brakmar. Remettras-tu ton titre et ton honneur en jeux ? Bonta saura te faire plier !';
+} else {
+  pModalFin.innerHTML = pseudoJoueur2Final + ' a gagné !<br> Bravo à toi jeune guerrier. Tu fais honneur à Brakmar. Remettras-tu ton titre et ton honneur en jeux ? Bonta saura te faire plier !';
+}
   }
   tourJoueur1 = true;
   updateDisplay();
@@ -239,38 +250,44 @@ btnSoins2.addEventListener('click', () => {
 
 // -----------------------------------------------------BOUTON SELECT PERSO JOUEUR 1 --------------------------------------------------
 
-const selec = document.getElementById("validPerso1")
+const selec = document.getElementById("validPerso1");
 
 selec.addEventListener('click', () => {
-    const croco = document.getElementById('croco')
-    croco.style.display = 'inline';
+    const croco = document.getElementById('croco');
+    croco.style.display = 'block';
+    setTimeout(() => {
+        croco.style.animationPlayState = 'running';
+    }, 10);
     checkDisplay();
 });
+
 
 // -----------------------------------------------------BOUTON SELECT PERSO JOUEUR 2 --------------------------------------------------
 
 
-const select = document.getElementById("validPerso2")
+const select = document.getElementById("validPerso2");
 
 select.addEventListener('click', () => {
-    const shushu = document.getElementById('shushu')
-    shushu.style.display = 'inline';
+    const shushu = document.getElementById('shushu');
+    shushu.style.display = 'block';
+    setTimeout(() => {
+        shushu.style.animationPlayState = 'running';
+    }, 10);
     checkDisplay();
 });
-
 // -----------------------------------------------------BOUTON COMMENCEZ LA PARTIE --------------------------------------------------
 
 
 function checkDisplay() {
-    const croco = document.getElementById('croco');
-    const shushu = document.getElementById('shushu');
-    const game = document.getElementById('game');
+  const croco = document.getElementById('croco');
+  const shushu = document.getElementById('shushu');
+  const game = document.getElementById('game');
 
-    if (croco.style.display === 'inline' && shushu.style.display === 'inline') {
+  if (croco.style.display === 'block' && shushu.style.display === 'block') {
       setTimeout(function() {
-        game.style.display = 'inline';
-    }, 1500); // 
-}
+          game.style.display = 'block';
+      }, 1500); 
+  }
 }
 // ---------------------------------------------------------------SECTION COMBAT---------------------------------------------------
 

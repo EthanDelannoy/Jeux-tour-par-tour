@@ -30,19 +30,19 @@
                 <button id="tutoriel">Tutoriel</button>
             </div>
 
-            <dialog id="ouvertureModal">
-                <p>Le jeu commence une fois vos personnages et pseudo choisi.<br>
-                    Vous commencez chacun d'un bout à l'autre de la carte.<br>
-                    Votres but est d'utilisé vos points d'attaque et vos points de mouvement pour avancer et attaquer
-                    votre adversaire.<br>
-                    Chaque personne bénéficie de statistique différente, de sort différents et de stratégie d'attaque et
-                    de defense diffrérente.<br>
-                    Prenez le personne qui vous correspond le mieux et jeté vous dans la bataille !<br>
-                    Le premier personne qui descend à 0 points de vie a perdu et le combat s'arrête.<br>
-                    <span>Saurez-vous être à la hauteur de la bataille qui vous attend ?</span><br>
-                </p>
-                <button id="modalEnd">Fermer le tutoriel</button>
-            </dialog>
+                <dialog id="ouvertureModal">
+                    <p>Le jeu commence une fois vos personnages et pseudo choisi.<br>
+                        Vous commencez chacun d'un bout à l'autre de la carte.<br>
+                        Votres but est d'utiliser vos points d'attaque et vos points de mouvement pour avancer et attaquer
+                        votre adversaire.<br>
+                        Chaque personne bénéficie de statistiques différentes, de sorts différents et de stratégies d'attaque et
+                        de défense différentes.<br>
+                        Prenez le personnage qui vous correspond le mieux et jetez-vous dans la bataille !<br>
+                        La première personne qui descend à 0 points de vie a perdu et le combat s'arrête.<br>
+                        <span>Saurez-vous être à la hauteur de la bataille qui vous attend ?</span><br>
+                    </p>
+                    <button id="modalEnd">Fermer le tutoriel</button>
+                </dialog>
 
         </section>
 
@@ -67,35 +67,31 @@
                 <div class="carouselDeux">
                     <div class="carousel">
                         <div class="carousel-container">
-                            <div class="slide"><img src="./image/iop 1.svg" alt="Slide 1"></div>
-                            <div class="slide"><img src="./image/eni (2).png" alt="Slide 2"></div>
-                            <div class="slide"><img src="./image/huppeer 1.svg" alt="Slide 3"></div>
-                            <div class="slide"><img src="./image/cra 1.svg" alt="Slide 4"></div>
-
+                            <div class="slide"><img class="imgPersoCaroussel" src="./image/iop 1.svg" alt="Slide 1"></div>
+                            <div class="slide"><img class="imgPersoCaroussel" src="./image/eni (2).png" alt="Slide 2"></div>
+                            <div class="slide"><img class="imgPersoCaroussel" src="./image/huppeer 1.svg" alt="Slide 3"></div>
+                            <div class="slide"><img class="imgPersoCaroussel" src="./image/cra 1.svg" alt="Slide 4"></div>
                         </div>
                         <div class="flech">
                             <button class="prev" onclick="moveSlide1(-1)">&#10094;</button>
                             <button class="next" onclick="moveSlide1(1)">&#10095;</button>
                         </div>
                     </div>
-
+                
                     <div class="carousel2">
                         <div class="carousel-container2">
-                            <div class="slide2"><img src="./image/iop 1.svg" alt="Slide 1"></div>
-                            <div class="slide2"><img src="./image/eni (2).png" alt="Slide 2"></div>
-                            <div class="slide2"><img src="./image/huppeer 1.svg" alt="Slide 3"></div>
-                            <div class="slide2"><img src="./image/cra 1.svg" alt="Slide 4"></div>
-
+                            <div class="slide2"><img class="imgPersoCaroussel" src="./image/iop 1.svg" alt="Slide 1"></div>
+                            <div class="slide2"><img class="imgPersoCaroussel" src="./image/eni (2).png" alt="Slide 2"></div>
+                            <div class="slide2"><img class="imgPersoCaroussel" src="./image/huppeer 1.svg" alt="Slide 3"></div>
+                            <div class="slide2"><img class="imgPersoCaroussel" src="./image/cra 1.svg" alt="Slide 4"></div>
                         </div>
-
                         <div class="flech2">
                             <button class="prev2" onclick="moveSlide2(-1)">&#10094;</button>
                             <button class="next2" onclick="moveSlide2(1)">&#10095;</button>
                         </div>
                     </div>
-
                 </div>
-
+                
                 <div class="doublvalid">
                     <button id="validPerso1">Selectionner ce personnage</button>
                     <button id="validPerso2">Selectionner ce personnage</button>
@@ -158,7 +154,7 @@
 
     </main>
 
-    <script src="js.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
